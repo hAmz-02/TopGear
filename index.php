@@ -78,7 +78,7 @@ $x = true;
             <h2 class="logoHead logoHead02">Galeria</h2>
         </div>
         <!-- Iventário -->
-        <div class="tableCard">
+        <div class="tableCard container-fluid">
             <?php
             include 'server.php';
 
@@ -89,10 +89,10 @@ $x = true;
                 while ($linha = mysqli_fetch_assoc($dadosIven)) {
                     ?>
                     <div class="card bg-dark text-white">
-                        <img class="card-img" src="<?php echo $linha['filename']; ?>" alt="<?= $linha['model'] ?>">
+                        <img class="card-img img-fluid" src="<?php echo $linha['filename']; ?>" alt="<?= $linha['model'] ?>">
                         <div class="card-img-overlay">
-                            <div class="textEffect">
-                                <h5 class="card-title"><?php echo $linha['model']; ?></h5>
+                            <div class="textEffect container-sm">
+                                <h5 class="card-title text-center text-wrap"><?php echo $linha['model']; ?></h5>
                             </div>
                         </div>
                     </div>
@@ -101,7 +101,10 @@ $x = true;
             }
             ?>
         </div>
-        <hr>
+        
+        <div class="headContainer ivenTitle" id="iventario">
+            <h2 class="logoHead logoHead02">Sobre Nós</h2>
+        </div>
         <div class="aboutSection">
             <div class="aboutTitleSection" id="about">
                 <h1 class="aboutTitle">TopGear</h1>

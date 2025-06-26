@@ -69,7 +69,7 @@ $dados = mysqli_fetch_array($result);
                 <label class="form-check-label" for="exampleCheck1">Destaque</label>
             </div>
             <br>
-            <button type="submit" class="btn btn-primary">Salvar</button>
+            <button type="submit" class="btn btn-primary" name="create_car">Salvar</button>
         </form>
     </div>
 
@@ -96,7 +96,7 @@ $dados = mysqli_fetch_array($result);
                     <tbody>
                         <?php
                         while ($linha = mysqli_fetch_assoc($dadosCarro)) {
-                            $codCar = $linha['id'];
+                            $codeCar = $linha['id'];
                             $nome = $linha['name'];
                             $model = $linha['model'];
                             $capa = $linha['filename'];
@@ -107,6 +107,8 @@ $dados = mysqli_fetch_array($result);
                                     <td>$model</td>
                                     <td>$capa</td>
                                     <td>$showcase</td>
+                                    <td><a href='editar_carro.php?id=$codeCar' class='btn btn-success btn-sm'>Editar</a></td>
+                                    <td><form action='cadastro_carro.php' method='POST'> <button type='submit' name='delete_car' value='$codeCar' class='btn btn-danger btn-sm'>Deletar</button></form></td>
                                  </tr>";
                         }
                         ?>
